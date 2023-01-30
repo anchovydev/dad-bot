@@ -20,8 +20,6 @@ client.on("messageCreate", message => {
          const newMessage = message.content.slice(newIndex).trim();
          const channel = message.channel;
          channel.send(`hi ${newMessage}, i'm dad-bot`);
-         console.log(newIndex);
-         console.log(newMessage);
    }
 });
 
