@@ -1,7 +1,7 @@
 // required discord.js classes
 const { Client, GatewayIntentBits } = require("discord.js");
 // token
-const { token } = require("./config.json");
+const { token, userId } = require("./config.json");
 
 // create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
@@ -16,21 +16,12 @@ client.on("messageCreate", message => {
    // goofy ahh case sensitivity
    if (message.content.toLowerCase().includes("im") || message.content.toLowerCase().includes("i am") || message.content.toLowerCase().includes("i\'m")) {
       console.log(`message sent by ${message.author.username} in server \"${message.guild.name}\"\ncontent: \"${message.content}\"`);
-      if (message.content.toLowerCase().includes("im") && !message.content.endsWith("im")) {
-         const newMessage = message.content.slice(message.content.toLowerCase().indexOf("im") + 2).trim();
+         const newIndex = Math.max(message.content.toLowerCase().indexOf("i am") + 4, message.content.toLowerCase().indexOf("im") + 2, message.content.toLowerCase().indexOf("i\'m") + 3);
+         const newMessage = message.content.slice(newIndex).trim();
          const channel = message.channel;
          channel.send(`hi ${newMessage}, i'm dad-bot`);
-      }
-      else if (message.content.toLowerCase().includes("i am") && !message.content.endsWith("i am")) {
-         const newMessage = message.content.slice(message.content.toLowerCase().indexOf("i am") + 4).trim();
-         const channel = message.channel;
-         channel.send(`hi ${newMessage}, i'm dad-bot`);
-      }
-      else if (message.content.toLowerCase().includes("i\'m") && !message.content.endsWith("i\'m")) {
-         const newMessage = message.content.slice(message.content.toLowerCase().indexOf("i\'m") + 3).trim();
-         const channel = message.channel;
-         channel.send(`hi ${newMessage}, i'm dad-bot`);
-      }
+         console.log(newIndex);
+         console.log(newMessage);
    }
 });
 
