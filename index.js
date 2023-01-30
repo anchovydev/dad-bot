@@ -19,7 +19,10 @@ client.on("messageCreate", message => {
          const newIndex = Math.max(message.content.toLowerCase().indexOf("i am") + 4, message.content.toLowerCase().indexOf("im") + 2, message.content.toLowerCase().indexOf("i\'m") + 3);
          const newMessage = message.content.slice(newIndex).trim();
          const channel = message.channel;
-         channel.send(`hi ${newMessage}, i'm dad-bot`);
+         if (!newMessage == "") {
+            channel.send(`hi ${newMessage}, i'm dad-bot`);
+         }
+         console.log(newIndex);
    }
 });
 
