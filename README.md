@@ -2,7 +2,7 @@
 
 a fun way to annoy everyone in your discord server
 
-## what is dad-bot
+## what is dad-bot?
 
 dad-bot is a simple bot that utilizes [discord.js](https://discord.js.org/) to make dad jokes. whenever someone types a message that includes "im", "i'm", and "i am" in the server, dad-bot will respond. this leads to some results such as this:
 
