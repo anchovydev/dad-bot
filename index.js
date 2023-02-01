@@ -19,9 +19,8 @@ client.on("messageCreate", message => {
       if (newIndex == 3 && message.content.toLowerCase().startsWith("im")) {
          newIndex = 2;
       }
-      const newMessage = message.content.slice(newIndex).trim();
-         if (!newMessage == "") {
-            message.channel.send(`hi ${newMessage}, i'm dad-bot`);
+         if (!message.content.slice(newIndex).trim() == "") {
+            message.channel.send(`hi ${message.content.slice(newIndex).trim()}, i'm dad-bot`);
          }
    }
 });
