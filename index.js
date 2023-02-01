@@ -1,5 +1,5 @@
 // required discord.js classes
-const { Client, GatewayIntentBits, PermissionFlagsBits } = require("discord.js");
+const { Client, GatewayIntentBits } = require("discord.js");
 // token
 const { token, userId } = require("./config.json");
 
