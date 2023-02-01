@@ -1,5 +1,5 @@
 // required discord.js classes
-const { Client, GatewayIntentBits } = require("discord.js");
+const { Client, GatewayIntentBits, PermissionFlagsBits } = require("discord.js");
 // token
 const { token, userId } = require("./config.json");
 
@@ -8,6 +8,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 client.once("ready", () => {
 	console.log("signed in");
+   client.user.setActivity("getting the milk");
 });
 
 client.on("messageCreate", message => {
