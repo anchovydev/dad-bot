@@ -1,11 +1,7 @@
 // required discord.js classes
 const { Client, GatewayIntentBits } = require("discord.js");
-// server so it runs 24/7
-const server = require("./server.js");
-// secrets
-const token = process.env["token"];
-const userId = process.env["userId"];
-const anchovyId = process.env["anchovyId"];
+
+const { token, userId, anchovyId } = require("./config.json");
 
 // banned words, i'm really sad that this is even neccessary
 const bannedWords = [];
