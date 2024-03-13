@@ -4,8 +4,7 @@ const { Client, GatewayIntentBits } = require("discord.js");
 const { token, userId, anchovyId } = require("./config.json");
 
 // banned words, i'm really sad that this is even neccessary
-const bannedWords = [];
-bannedWords.push("fagg", "nigg", "chink");
+const bannedWords = ["fagg", "nigg", "chink", "fuck", "shit", "kys"];
 
 // create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
